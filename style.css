@@ -297,3 +297,45 @@ td button {
     min-width: 100%;
   }
 }
+/* ===== ANIMATED HAMBURGER ===== */
+
+.menu-btn {
+  width: 36px;
+  height: 28px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-btn span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animate to X */
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* Show on mobile */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: flex;
+  }
+}
