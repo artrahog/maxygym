@@ -280,3 +280,64 @@ button:active {
 .link {
   transition: color 0.3s ease;
 }
+/* ===== ADMIN TABLE MOBILE FIX ===== */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  table {
+    min-width: 600px;
+  }
+
+  td button {
+    display: block;
+    width: 100%;
+    margin: 6px 0;
+  }
+}
+/* ===== MOBILE NAV UPGRADE ===== */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .top-bar {
+    position: relative;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background: #111;
+    margin-top: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  nav a {
+    padding: 14px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  nav.show {
+    display: flex;
+  }
+}
