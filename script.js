@@ -175,12 +175,19 @@ function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("show");
 }
 function toggleMenu() {
-  document.getElementById("navMenu").classList.toggle("show");
+  const nav = document.getElementById("navMenu");
+  const btn = document.getElementById("menuBtn");
+
+  nav.classList.toggle("show");
+  btn.classList.toggle("active");
 }
+
 
 function closeMenu() {
   document.getElementById("navMenu").classList.remove("show");
+  document.getElementById("menuBtn").classList.remove("active");
 }
+
 
 /* START */
 showPage('home');
