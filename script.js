@@ -171,6 +171,9 @@ function removeUser(i) {
   saveUsers(users);
   loadAdmin();
 }
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("show");
+}
 
 /* START */
 showPage('home');
