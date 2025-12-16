@@ -174,6 +174,13 @@ function removeUser(i) {
 function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("show");
 }
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("show");
+}
+
+function closeMenu() {
+  document.getElementById("navMenu").classList.remove("show");
+}
 
 /* START */
 showPage('home');
