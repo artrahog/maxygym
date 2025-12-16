@@ -314,8 +314,25 @@ button:active {
   }
 
   .menu-btn {
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu-btn {
     display: block;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
   }
+}
+.top-bar {
+  position: relative;
+}
+
 
   nav {
     display: none;
