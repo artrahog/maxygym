@@ -16,11 +16,12 @@ body {
 .top-bar {
   background: #111;
   color: #fff;
-  padding: 16px 24px;
+  padding: 22px 24px;          
   display: flex;
+  align-items: center;         
   justify-content: space-between;
-  align-items: center;
 }
+
 
 .site-title {
   font-size: 24px;
@@ -280,7 +281,7 @@ button:active {
 .link {
   transition: color 0.3s ease;
 }
-/* ===== ADMIN TABLE MOBILE FIX ===== */
+
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -297,15 +298,17 @@ button:active {
     margin: 6px 0;
   }
 }
-/* ===== MOBILE NAV UPGRADE ===== */
+
 .menu-btn {
   display: none;
   background: none;
   border: none;
-  font-size: 26px;
   color: white;
+  font-size: 28px;
   cursor: pointer;
+  padding: 8px 10px;      
 }
+
 
 /* Mobile layout */
 @media (max-width: 768px) {
@@ -358,7 +361,7 @@ button:active {
     display: flex;
   }
 }
-/* ===== HAMBURGER FIX ===== */
+
 
 .menu-btn {
   display: none;
@@ -381,7 +384,7 @@ nav {
   .top-bar {
     position: relative;
     display: flex;
-    align-items: center;   /* ✅ FIX */
+    align-items: center;   
     justify-content: space-between;
   }
 
@@ -441,4 +444,11 @@ nav {
   nav.show {
     display: flex;
   }
+}
+.site-title {
+  cursor: pointer;
+}
+
+.site-title:hover {
+  color: #4dd0e1;
 }
