@@ -1,6 +1,7 @@
 const pages = ['home','login','signup','attendance','about','contact','admin'];
 let currentUser = null;
 let pendingAttendance = [];
+let isAdmin = false;
 
 const today = new Date();
 const monthNames = [
@@ -55,25 +56,38 @@ function login() {
   const u = loginUser.value;
   const p = loginPass.value;
 
+  // ADMIN LOGIN
   if (u === "admin" && p === "admin123") {
+    isAdmin = true;
+    currentUser = null;
     logoutBtn.classList.remove("hidden");
+    updateNavAuth();
     loadAdmin();
     return;
   }
 
+  // NORMAL USER
   const user = getUsers().find(x => x.username === u && x.password === p);
   if (!user) return alert("Invalid login");
 
+  isAdmin = false;
   currentUser = user;
   logoutBtn.classList.remove("hidden");
+  updateNavAuth();
   showPage('home');
 }
 
+
+
 function logout() {
   currentUser = null;
+  isAdmin = false;
   logoutBtn.classList.add("hidden");
+  updateNavAuth();
   showPage('login');
 }
+
+
 
 /* MEMBERSHIP */
 function updateMemberStatus() {
@@ -172,9 +186,6 @@ function removeUser(i) {
   loadAdmin();
 }
 function toggleMenu() {
-  document.getElementById("navMenu").classList.toggle("show");
-}
-function toggleMenu() {
   const nav = document.getElementById("navMenu");
   const btn = document.getElementById("menuBtn");
 
@@ -188,6 +199,23 @@ function closeMenu() {
   document.getElementById("menuBtn").classList.remove("active");
 }
 
+function updateNavAuth() {
+  const navBtn = document.getElementById("attendanceNav");
+
+  if (currentUser || isAdmin) {
+    navBtn.textContent = "Attendance";
+    navBtn.setAttribute("onclick", "navAction('attendance')");
+  } else {
+    navBtn.textContent = "Login";
+    navBtn.setAttribute("onclick", "navAction('login')");
+  }
+}
+
+function navAction(page) {
+  showPage(page);
+  closeMenu(); 
+}
 
 /* START */
 showPage('home');
+updateNavAuth();
