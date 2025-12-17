@@ -91,17 +91,26 @@ function logout() {
 
 /* MEMBERSHIP */
 function updateMemberStatus() {
-  memberStatus.textContent = currentUser.member
-    ? "Status: MEMBER"
-    : "Status: CUSTOMER";
+  const btn = document.getElementById("membershipBtn");
+
+  if (currentUser.member) {
+    memberStatus.textContent = "Status: MEMBER";
+    btn.classList.add("member");
+    btn.textContent = "MEMBER";
+  } else {
+    memberStatus.textContent = "Status: CUSTOMER";
+    btn.classList.remove("member");
+    btn.textContent = "NON-MEMBER";
+  }
 }
 
 function toggleMembership() {
   currentUser.member = !currentUser.member;
   saveCurrentUser();
   updateMemberStatus();
-  buildCalendar();
+  buildCalendar(); 
 }
+
 
 function saveCurrentUser() {
   const users = getUsers();
@@ -124,9 +133,10 @@ function buildCalendar() {
     const day = document.createElement("div");
     day.textContent = d;
 
-    if (currentUser.attendance.includes(d)) {
-      day.style.background = currentUser.member ? "#fdd835" : "#4dd0e1";
-    }
+   if (currentUser.attendance.includes(d)) {
+  day.style.background = currentUser.member ? "#fdd835" : "#4dd0e1";
+}
+
 
     day.onclick = () => {
       if (!pendingAttendance.includes(d)) {
