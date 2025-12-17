@@ -78,8 +78,13 @@
   <section id="attendance" class="card hidden">
     <h3 id="monthYear"></h3>
     <p id="memberStatus"></p>
-    <button onclick="toggleMembership()">Toggle Membership</button>
-    <div class="calendar" id="calendar"></div>
+    <button id="membershipBtn" class="membership-btn" onclick="toggleMembership()">
+  NON-MEMBER
+</button>
+    <div class="calendar-wrapper">
+  <div class="calendar" id="calendar"></div>
+</div>
+
     <button class="submit-btn" onclick="submitAttendance()">Submit Attendance</button>
   </section>
 
