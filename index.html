@@ -21,11 +21,12 @@
 
 
   <nav id="navMenu">
-    <a onclick="showPage('home')">Home</a>
-    <a onclick="showPage('attendance')">Attendance</a>
-    <a onclick="showPage('about')">About</a>
-    <a onclick="showPage('contact')">Contact</a>
-  </nav>
+  <a onclick="navAction('home')">Home</a>
+  <a id="attendanceNav" onclick="navAction('login')">Login</a>
+  <a onclick="navAction('about')">About</a>
+  <a onclick="navAction('contact')">Contact</a>
+</nav>
+
 </header>
 
 
@@ -44,11 +45,13 @@
     </div>
 
     <h3>📍 Our Location</h3>
+    <h4>On the third floor</h4>
     <div class="map-container">
       <iframe
-        src="https://www.google.com/maps?q=14.281843,121.085677&output=embed"
-        loading="lazy">
-      </iframe>
+  src="https://www.google.com/maps?q=14.283472,120.998250&output=embed"
+  loading="lazy">
+</iframe>
+
     </div>
   </section>
 
