@@ -57,7 +57,7 @@ function login() {
   const p = loginPass.value;
 
   // ADMIN LOGIN
-  if (u === "admin" && p === "admin123") {
+  if (u === "admin" && p === "Pa$$word1") {
     isAdmin = true;
     currentUser = null;
     logoutBtn.classList.remove("hidden");
@@ -229,3 +229,4 @@ function navAction(page) {
 /* START */
 showPage('home');
 updateNavAuth();
+
