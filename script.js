@@ -62,6 +62,7 @@ function login() {
     currentUser = null;
     logoutBtn.classList.remove("hidden");
     updateNavAuth();
+    closeMenu();               
     loadAdmin();
     return;
   }
@@ -73,9 +74,11 @@ function login() {
   isAdmin = false;
   currentUser = user;
   logoutBtn.classList.remove("hidden");
-  updateNavAuth();
+  updateNavAuth();            
+  closeMenu();                 
   showPage('home');
 }
+
 
 
 
@@ -229,4 +232,3 @@ function navAction(page) {
 /* START */
 showPage('home');
 updateNavAuth();
-
